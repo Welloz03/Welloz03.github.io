@@ -1,12 +1,183 @@
 <!DOCTYPE HTML>
-<html>
+<html data-theme="dark">
 <head>
     <title>Mohamed Wael Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" /> 
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Anghami-inspired Dark Theme Variables */
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --heading-color: #ffffff;
+            --section-bg-1: #1e1e1e;
+            --section-bg-2: #252525;
+            --section-bg-3: #2a2a2a;
+            --accent-color: #9b59b6;
+            --accent-light: #bb8fce;
+            --accent-gradient: linear-gradient(135deg, #6c3483, #9b59b6);
+            --card-bg: #2d2d2d;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            --sidebar-bg: rgba(30, 30, 30, 0.95);
+            --sidebar-text: #e0e0e0;
+            --icon-bg: #333333;
+            --icon-color: #9b59b6;
+            --border-color: #444444;
+            --link-color: #bb8fce;
+            --link-hover: #d2b4de;
+            --button-text: #ffffff;
+        }
+        
+        /* Apply Anghami-inspired fonts and colors only */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        p {
+            color: var(--text-color);
+        }
+        
+        a {
+            color: var(--link-color);
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--link-hover);
+        }
+        
+        /* Sidebar styling */
+        #sidebar {
+            background-color: var(--sidebar-bg);
+        }
+        
+        #sidebar a {
+            color: var(--sidebar-text);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #sidebar a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Section backgrounds */
+        .wrapper.style1 {
+            background-color: var(--section-bg-1);
+            color: var(--text-color);
+        }
+        
+        .wrapper.style2 {
+            background-color: var(--section-bg-2);
+            color: var(--text-color);
+        }
+        
+        .wrapper.style3 {
+            background-color: var(--section-bg-3);
+            color: var(--text-color);
+        }
+        
+        /* Fix for list items */
+        ul li {
+            color: var(--text-color);
+        }
+        
+        /* Anghami-style buttons */
+        .button {
+            background: var(--accent-gradient);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            color: var(--button-text) !important;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        .button:hover::before {
+            left: 100%;
+        }
+        
+        /* Improved profile image */
+        .profile-image {
+            width: 300px; 
+            height: 300px; 
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 4px solid var(--section-bg-1);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .profile-image::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        /* Anghami-style scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-light);
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -33,35 +204,6 @@
 			<div class="inner">
 			  <div class="profile-image"> 
 				<img src="images\Mohamed Wael.jpg" alt="Mohamed Wael Elsamman">
-				<style>
-.profile-image {
-    width: 300px; 
-    height: 300px; 
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-}
-
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-.profile-image::after { /* Use ::after to create the stroke */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% + 10px); /* Slightly larger to create the stroke */
-    height: calc(100% + 10px);
-    border-radius: 50%;
-    background: linear-gradient(to right, #8E44AD, #9B59B6, #BB8FCE); 
-    opacity: 0.5;
-    z-index: -1; /* Place it behind the image */
-    transform: translate(-5px, -5px); /* Center the stroke */
-}
-				</style>
 			  </div>
 			  <h1>Mohamed Wael Elsamman</h1>
 			  <p><i>Data Engineer - Data Analyst</i></p> 
@@ -95,6 +237,22 @@
                         <span class="icon solid major fa-graduation-cap"></span>
                         <h3>B.Eng. in Artificial Intelligence (in progress)</h3>
                         <p>Mansoura University</p>
+                        <p><strong>GPA:</strong> 3.91</p>
+                        <p><strong>Key Courses:</strong></p>
+                        <ul>
+                            <li>Machine Learning</li>
+                            <li>Big Data</li>
+                            <li>Deep Learning</li>
+                            <li>Data Analysis</li>
+                            <li>Data Management</li>
+                            <li>Discrete Mathematics</li>
+                            <li>Advanced Mathematics</li>
+                            <li>Statistics</li>
+                            <li>Computer Vision</li>
+                            <li>Neural Networks</li>
+                            <li>Databases</li>
+                            <li>Linear Algebra</li>
+                        </ul>
                     </section>
                 </div>
             </div>
@@ -297,7 +455,7 @@
 				<h2>Testimonials</h2> 
 				<div class="testimonial-container">
 					<div class="testimonial"> 
-						<p>“I had the pleasure of teaching Eng. Mohamed Wael during the DEPI initiative in the Data Engineering track. Wael consistently stood out as one of the most interactive and cooperative students in the cohort. His commitment to learning and his proactive engagement in discussions were remarkable. Throughout the program, he demonstrated a growing resilience and determination to excel in his studies, continually pushing himself to achieve more. I have no doubt that his dedication and positive attitude will be assets in any professional environment.”</p>
+						<p>"I had the pleasure of teaching Eng. Mohamed Wael during the DEPI initiative in the Data Engineering track. Wael consistently stood out as one of the most interactive and cooperative students in the cohort. His commitment to learning and his proactive engagement in discussions were remarkable. Throughout the program, he demonstrated a growing resilience and determination to excel in his studies, continually pushing himself to achieve more. I have no doubt that his dedication and positive attitude will be assets in any professional environment."</p>
 						<div class="author-info">
 							<p class="author">- <i>Yasmeen Nour</i>, Data Engineer</p> 
 						</div>
@@ -309,13 +467,13 @@
 						</div>
 					</div>
 					<div class="testimonial">
-						<p>"I've had the pleasure of collaborating with you. You consistently delivered high-quality designs that were both creative and aligned with our marketing goals. You are not only skilled and detail-oriented but also incredibly responsive and open to feedback. Your ability to take our vision and transform it into stunning visuals made our campaigns stand out. You're a reliable and helpful team player who’s always ready to go the extra mile. Truly a valuable asset to any project."</p>
+						<p>"I've had the pleasure of collaborating with you. You consistently delivered high-quality designs that were both creative and aligned with our marketing goals. You are not only skilled and detail-oriented but also incredibly responsive and open to feedback. Your ability to take our vision and transform it into stunning visuals made our campaigns stand out. You're a reliable and helpful team player who's always ready to go the extra mile. Truly a valuable asset to any project."</p>
 						<div class="author-info">
 							<p class="author">- <i>Mohamed Samir</i>, Digital Marketing specialist</p> 
 						</div>
 					</div>
 					<div class="testimonial">
-						<p>"I just wanted to say how much I appreciated working with you. You were always supportive, easy to talk to, and really smart and hardworking. It was a pleasure working with you, and I’m grateful for all your help."</p>
+						<p>"I just wanted to say how much I appreciated working with you. You were always supportive, easy to talk to, and really smart and hardworking. It was a pleasure working with you, and I'm grateful for all your help."</p>
 						<div class="author-info">
 							<p class="author">- <i>Mohamed Wael Elmaddah</i>, UI/UX Designer</p> 
 						</div>
@@ -339,7 +497,7 @@
 						</div>
 					</div>
 					<div class="testimonial">
-						<p>"As a social media specialist, I had a direct contact with Mohamed Wael, working on many projects. With his attention to details and creative thinking, he managed to get the best visual appearance out of the content. He’s very dedicated and professional when it comes to graphic design."</p>
+						<p>"As a social media specialist, I had a direct contact with Mohamed Wael, working on many projects. With his attention to details and creative thinking, he managed to get the best visual appearance out of the content. He's very dedicated and professional when it comes to graphic design."</p>
 						<div class="author-info">
 							<p class="author">- <i>Nada M. Ghanem</i>, Social Media Specialist</p>
 						</div>
@@ -359,7 +517,7 @@
 						</div>
 					</div>
 					<div class="testimonial">
-						<p>"You’re very hardworking and you add your touch into everything. You stick well to deadlines because you’re very organized. You always have a vision that you wanna accomplish. Working with you was a good experience overall:)"</p>
+						<p>"You're very hardworking and you add your touch into everything. You stick well to deadlines because you're very organized. You always have a vision that you wanna accomplish. Working with you was a good experience overall:)"</p>
 						<div class="author-info">
 							<p class="author">- <i>Janna Elgarhy</i>, Graphic Designer</p>
 						</div>
@@ -439,6 +597,5 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>
